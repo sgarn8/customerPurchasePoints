@@ -5,7 +5,7 @@
 				"firstName":"Steve",
 				"lastName":"Garncarz"
 			},		
-			"purchaseDate":"2022-04-11",
+			"purchaseDate":"2022-09-11",
 			"purchaseAmt":"50.00"
 		},
 		{
@@ -13,7 +13,7 @@
 					"firstName":"Steve",
 					"lastName":"Garncarz"
 			},		
-			"purchaseDate":"2022-12-24",
+			"purchaseDate":"2022-11-24",
 			"purchaseAmt":"100.00"
 		},
 		{
@@ -29,7 +29,7 @@
 				"firstName":"John",
 				"lastName":"Doe"
 			},		
-			"purchaseDate":"2022-01-24",
+			"purchaseDate":"2022-09-24",
 			"purchaseAmt":"20.00"
 		},
 		{
@@ -37,16 +37,16 @@
 				"firstName":"John",
 				"lastName":"Doe"
 			},		
-			"purchaseDate":"2022-11-24",
-			"purchaseAmt":"50.00"
+			"purchaseDate":"2022-10-24",
+			"purchaseAmt":"75.00"
 		},
 		{
 			"customer": {
 				"firstName":"John",
 				"lastName":"Doe"
 			},		
-			"purchaseDate":"2022-01-02",
-			"purchaseAmt":"120.00"
+			"purchaseDate":"2022-11-02",
+			"purchaseAmt":"160.00"
 		},
 		{
 			"customer": {
@@ -54,7 +54,7 @@
 				"lastName":"Doe"
 			},
 			"purchaseDate":"2022-11-12",
-			"purchaseAmt":"50.00"
+			"purchaseAmt":"222.00"
 		},
 		{
 		"customer": {
@@ -62,7 +62,7 @@
 				"lastName":"Doe"
 			},
 			"purchaseDate":"2022-11-22",
-			"purchaseAmt":"500.00"
+			"purchaseAmt":"501.00"
 		},
 		{
 			"customer": {
@@ -70,15 +70,23 @@
 				"lastName":"Doe"
 			},
 			"purchaseDate":"2023-01-02",
-			"purchaseAmt":"120.00"
+			"purchaseAmt":"122.22"
 		},
 		{
 			"customer": {
 				"firstName":"Jane",
 				"lastName":"Doe"
 			},
-			"purchaseDate":"2023-01-02",
-			"purchaseAmt":"20.00"
+			"purchaseDate":"2023-11-02",
+			"purchaseAmt":"333.33"
+		},
+		{
+			"customer": {
+				"firstName":"Jane",
+				"lastName":"Doe"
+			},
+			"purchaseDate":"2022-11-02",
+			"purchaseAmt":"0.00"
 		}
 	]
 }

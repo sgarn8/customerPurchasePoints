@@ -1,7 +1,6 @@
 package smg.com.example.customerPurchasePoints;
 
 import java.sql.Date;
-import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,9 +18,8 @@ class CustomerPurchasePointsApplicationTests {
 	@Test
 	void storeCustomerPurchase() {
 		Customer customer = new Customer("John", "Doe");
-		
-		long millis=System.currentTimeMillis();  
-        LocalDate today= LocalDate.now();
+		Long millis = System.currentTimeMillis();
+		Date today = new Date(millis);
 		double amount = 85.00;
 		
 		CustomerPurchase customerPurchase = 

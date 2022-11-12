@@ -1,5 +1,9 @@
 package smg.com.example.customerPurchasePoints.Response;
 
+import java.text.DecimalFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class MonthlySummary {
 	String monthAbeviation;
 	Integer points;
@@ -23,5 +27,13 @@ public class MonthlySummary {
 	public void setPurchaseTotal(Double purchaseTotal) {
 		this.purchaseTotal = purchaseTotal;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format(
+				"MonthlySummary[monthAbeviation='%s', points='%d', PurchaseTotal='%f']",
+				this.getMonthAbeviation(), this.getPoints(), this.getPurchaseTotal() );
+	}
+
 	
 }
