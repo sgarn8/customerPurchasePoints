@@ -1,0 +1,84 @@
+{
+	"customerPurchases" : [
+		{
+			"customer": {
+				"firstName":"Steve",
+				"lastName":"Garncarz"
+			},		
+			"purchaseDate":"2022-04-11",
+			"purchaseAmt":"50.00"
+		},
+		{
+			"customer": {
+					"firstName":"Steve",
+					"lastName":"Garncarz"
+			},		
+			"purchaseDate":"2022-12-24",
+			"purchaseAmt":"100.00"
+		},
+		{
+			"customer": {
+				"firstName":"Steve",
+				"lastName":"Garncarz"
+			},		
+			"purchaseDate":"2023-01-11",
+			"purchaseAmt":"120.00"
+		},
+		{
+			"customer": {
+				"firstName":"John",
+				"lastName":"Doe"
+			},		
+			"purchaseDate":"2022-01-24",
+			"purchaseAmt":"20.00"
+		},
+		{
+			"customer": {
+				"firstName":"John",
+				"lastName":"Doe"
+			},		
+			"purchaseDate":"2022-11-24",
+			"purchaseAmt":"50.00"
+		},
+		{
+			"customer": {
+				"firstName":"John",
+				"lastName":"Doe"
+			},		
+			"purchaseDate":"2022-01-02",
+			"purchaseAmt":"120.00"
+		},
+		{
+			"customer": {
+				"firstName":"Jane",
+				"lastName":"Doe"
+			},
+			"purchaseDate":"2022-11-12",
+			"purchaseAmt":"50.00"
+		},
+		{
+		"customer": {
+				"firstName":"Jane",
+				"lastName":"Doe"
+			},
+			"purchaseDate":"2022-11-22",
+			"purchaseAmt":"500.00"
+		},
+		{
+			"customer": {
+				"firstName":"Jane",
+				"lastName":"Doe"
+			},
+			"purchaseDate":"2023-01-02",
+			"purchaseAmt":"120.00"
+		},
+		{
+			"customer": {
+				"firstName":"Jane",
+				"lastName":"Doe"
+			},
+			"purchaseDate":"2023-01-02",
+			"purchaseAmt":"20.00"
+		}
+	]
+}
