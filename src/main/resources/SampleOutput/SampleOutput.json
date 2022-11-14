@@ -1,0 +1,64 @@
+{
+	"title": "3 Month Report based on input file: ./src/main/resources/customerActivity.json",
+	"startDate": "2022-09-01",
+	"endDate": "2022-11-30",
+	"customerPurchaseSummaries": {
+		"2": {
+			"customerId": 2,
+			"customerName": "Steve Garncarz",
+			"monthlySummaries": {
+				"2022-Sep": {
+					"yearOfPurchase": 2022,
+					"monthAbeviation": "Sep",
+					"totalPoints": 0,
+					"totalPurchaseAmt": 50.0
+				},
+				"2022-Nov": {
+					"yearOfPurchase": 2022,
+					"monthAbeviation": "Nov",
+					"totalPoints": 50,
+					"totalPurchaseAmt": 100.0
+				}
+			},
+			"totalPoints": 50.0
+		},
+		"6": {
+			"customerId": 6,
+			"customerName": "John Doe",
+			"monthlySummaries": {
+				"2022-Sep": {
+					"yearOfPurchase": 2022,
+					"monthAbeviation": "Sep",
+					"totalPoints": 0,
+					"totalPurchaseAmt": 20.0
+				},
+				"2022-Nov": {
+					"yearOfPurchase": 2022,
+					"monthAbeviation": "Nov",
+					"totalPoints": 170,
+					"totalPurchaseAmt": 160.0
+				},
+				"2022-Oct": {
+					"yearOfPurchase": 2022,
+					"monthAbeviation": "Oct",
+					"totalPoints": 25,
+					"totalPurchaseAmt": 75.0
+				}
+			},
+			"totalPoints": 195.0
+		},
+		"10": {
+			"customerId": 10,
+			"customerName": "Jane Doe",
+			"monthlySummaries": {
+				"2022-Nov": {
+					"yearOfPurchase": 2022,
+					"monthAbeviation": "Nov",
+					"totalPoints": 1146,
+					"totalPurchaseAmt": 723.0
+				}
+			},
+			"totalPoints": 1146.0
+		}
+	}
+}

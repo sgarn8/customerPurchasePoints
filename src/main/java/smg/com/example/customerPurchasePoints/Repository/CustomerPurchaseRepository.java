@@ -15,6 +15,6 @@ import smg.com.example.customerPurchasePoints.Entity.CustomerPurchase;
 public interface CustomerPurchaseRepository extends CrudRepository<CustomerPurchase, Long> {
 	List<CustomerPurchase> findByCustomer(Customer customer);
 	CustomerPurchase findById(long id);
-	List<CustomerPurchase> findAllByPurchaseDateBetween(Date purchaseDateTo, Date purchaseDateFrom);
+	List<CustomerPurchase> findAllByCustomerAndPurchaseDateBetweenOrderByPurchaseDateAsc(Customer customer, Date purchaseDateTo, Date purchaseDateFrom);
 }
 

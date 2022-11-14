@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 import smg.com.example.customerPurchasePoints.Entity.CustomerActivity;
 import smg.com.example.customerPurchasePoints.Entity.CustomerPurchase;
@@ -33,6 +36,13 @@ public class CustomerReportController {
 	
 	@GetMapping("/")
 	public String index() {
+		return "<h1>Customer Points App</h1>" +
+				"<p><a href=http://localhost:8080/showinput>Display input File (json)</a></p>" +
+				"<p><a href=http://localhost:8080/prev3MonthReport>Display 3 Month Report (json)</a></p>";
+		
+	}
+	@GetMapping("/showinput")
+	public String showinput() {
 		System.out.println("Running " + name + " with input file: " + this.inputfilename);
 		
 		customerReportService.loadCustomerActivityFromFile(this.inputfilename);
@@ -60,5 +70,11 @@ public class CustomerReportController {
 		Gson gson = new Gson();
 		String output = gson.toJson(customerReport);
 		return output;
+		
+//		Gson gson2 = new GsonBuilder().setPrettyPrinting().create();
+//		JsonElement je = JsonParser.parseString(output);
+//		String prettyJsonString = gson2.toJson(je);
+//		System.out.println(prettyJsonString);
+//		return prettyJsonString;
 	}
 }

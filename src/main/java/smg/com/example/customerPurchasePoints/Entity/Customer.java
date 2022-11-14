@@ -6,9 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.boot.model.source.spi.Sortable;
+
 
 @Entity
-public class Customer {
+public class Customer implements Sortable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -63,6 +65,18 @@ public class Customer {
 		return String.format(
 				"Customer[id=%d, firstName='%s', lastName='%s']",
 				id, firstName, lastName);
+	}
+
+	@Override
+	public boolean isSorted() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public String getComparatorName() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

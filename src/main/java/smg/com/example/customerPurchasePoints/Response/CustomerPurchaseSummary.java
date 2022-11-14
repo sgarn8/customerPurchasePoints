@@ -7,6 +7,7 @@ public class CustomerPurchaseSummary {
 	Long customerId;
 	String customerName;
 	Map<String, MonthlySummary> monthlySummaries;
+	Double totalPoints;
 	
 	public Long getCustomerId() {
 		return customerId;
@@ -19,6 +20,12 @@ public class CustomerPurchaseSummary {
 	}
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
+	}
+	public Double getTotalPoints() {
+		return totalPoints;
+	}
+	public void setTotalPoints(Double totalPoints) {
+		this.totalPoints = totalPoints;
 	}
 	public Map<String, MonthlySummary> getMonthlySummaries() {
 		return monthlySummaries;

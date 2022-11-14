@@ -1,12 +1,14 @@
 package smg.com.example.customerPurchasePoints.Response;
 
 import java.util.List;
+import java.util.Map;
 
 public class CustomerReport {
 	String title;
 	String startDate;
 	String endDate;
-	List<CustomerPurchaseSummary> customerPurchaseSummaries;
+	// Customer Summaries keyed by CustomerId
+	Map<Long, CustomerPurchaseSummary> customerPurchaseSummaries;
 	
 	
 	public String getTitle() {
@@ -33,11 +35,11 @@ public class CustomerReport {
 		this.endDate = endDate;
 	}
 
-	public List<CustomerPurchaseSummary> getCustomerPurchaseSummaries() {
+	public Map<Long, CustomerPurchaseSummary> getCustomerPurchaseSummaries() {
 		return customerPurchaseSummaries;
 	}
 
-	public void setCustomerPurchaseSummaries(List<CustomerPurchaseSummary> customerPurchaseSummaries) {
+	public void setCustomerPurchaseSummaries(Map<Long, CustomerPurchaseSummary> customerPurchaseSummaries) {
 		this.customerPurchaseSummaries = customerPurchaseSummaries;
 	}
 
