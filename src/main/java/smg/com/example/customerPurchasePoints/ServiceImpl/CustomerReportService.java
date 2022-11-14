@@ -61,9 +61,6 @@ public class CustomerReportService {
 		MonthlySummary monthlySummary=null;
 		
  		for (Customer customer : customerRepository.findAll(Sort.by("LastName").ascending().and(Sort.by("FirstName").ascending()))) {
- 			System.out.println("Customer id:" + customer.getId() +" LastName:" + customer.getLastName() + 
- 					", FirstName:" + customer.getFirstName());
- 	
  			Long custId = customer.getId();
 
 			for (CustomerPurchase customerpurchase : 				
@@ -73,13 +70,6 @@ public class CustomerReportService {
 
 				LocalDate purchDate = customerpurchase.getPurchaseDate().toLocalDate();
 				String monthlyPurchaseKey = purchDate.format(formatter);
-
-	 			System.out.println(
-	 					"customerpurchase purchaseDate:" + customerpurchase.getPurchaseDate() + 
-	 					", customerId:" + custId +
-	 					", purchasesAmt: " + customerpurchase.getPurchaseAmt() +
-	 					", monthlyPurchaseKey: " + monthlyPurchaseKey
-	 					);
 				
 				if (customerPurchaseSummaryMap.containsKey(custId)) {
 					// Customer summary exists so use it
