@@ -42,9 +42,7 @@ public class CustomerReportController {
 		
 	}
 	@GetMapping("/showinput")
-	public String showinput() {
-		System.out.println("Running " + name + " with input file: " + this.inputfilename);
-		
+	public String showinput() {		
 		customerReportService.loadCustomerActivityFromFile(this.inputfilename);
 		CustomerActivity customerActivity = new CustomerActivity();
 		List<CustomerPurchase> customerPurchases = new ArrayList<CustomerPurchase>();
@@ -70,11 +68,5 @@ public class CustomerReportController {
 		Gson gson = new Gson();
 		String output = gson.toJson(customerReport);
 		return output;
-		
-//		Gson gson2 = new GsonBuilder().setPrettyPrinting().create();
-//		JsonElement je = JsonParser.parseString(output);
-//		String prettyJsonString = gson2.toJson(je);
-//		System.out.println(prettyJsonString);
-//		return prettyJsonString;
 	}
 }

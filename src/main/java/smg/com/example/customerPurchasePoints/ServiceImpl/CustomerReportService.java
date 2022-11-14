@@ -55,14 +55,11 @@ public class CustomerReportService {
 			LocalDate startDate, LocalDate endDate) {
 		
 		Map<Long, CustomerPurchaseSummary> customerPurchaseSummaryMap = new HashMap<Long, CustomerPurchaseSummary>();
-		// List<CustomerPurchaseSummary> customerPurchaseSummaries=new ArrayList<CustomerPurchaseSummary>();	
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MMM");
 		CustomerPurchaseSummary customerPurchaseSummary = null;
 		Map<String, MonthlySummary> custMonthlySummariesMap = null;
 		MonthlySummary monthlySummary=null;
 		
-// 		for (Customer customer : customerRepository.findAllOrderByLastNameAscOrderByFirstNameAsc()) {
-//		for (Customer) customer : customerRepository.findAll(Sort.by(SortDirections.ASC, "LastName"));
  		for (Customer customer : customerRepository.findAll(Sort.by("LastName").ascending().and(Sort.by("FirstName").ascending()))) {
  			System.out.println("Customer id:" + customer.getId() +" LastName:" + customer.getLastName() + 
  					", FirstName:" + customer.getFirstName());
@@ -85,8 +82,6 @@ public class CustomerReportService {
 	 					);
 				
 				if (customerPurchaseSummaryMap.containsKey(custId)) {
-					System.out.println("customerPurchaseSummaryMap for CustId " + custId + " found.");
-
 					// Customer summary exists so use it
 					customerPurchaseSummary = customerPurchaseSummaryMap.get(custId);
 					custMonthlySummariesMap = customerPurchaseSummary.getMonthlySummaries();
@@ -95,19 +90,15 @@ public class CustomerReportService {
 					if ( custMonthlySummariesMap != null 
 					&& custMonthlySummariesMap.containsKey(monthlyPurchaseKey)) {
 						// Get Customer Monthly summary if it exists
-						System.out.println("custMonthlySummariesMap for monthlyPurchaseKey " + monthlyPurchaseKey + " found.");
 						monthlySummary = custMonthlySummariesMap.get(monthlyPurchaseKey);
 					} else {
 						// otherwise add new Customer Monthly summary
-						System.out.println("custMonthlySummariesMap for monthlyPurchaseKey " + monthlyPurchaseKey + " not found. Creating...");
 						monthlySummary = new MonthlySummary(purchDate);
 						custMonthlySummariesMap.put(monthlyPurchaseKey, monthlySummary);
 
 					}
 				} else {
 					// create new customer summary 
-					System.out.println("customerPurchaseSummaryMap for CustId " + custId + " not found. Creating...");
-
 					customerPurchaseSummary = new CustomerPurchaseSummary();
 					customerPurchaseSummaryMap.put(custId, customerPurchaseSummary);					
 			
@@ -119,15 +110,11 @@ public class CustomerReportService {
 					customerPurchaseSummary.setTotalPoints(0D);		
 					
 					// add monthly summary map to newly created customerPurchaseSummary
-					System.out.println("custMonthlySummariesMap for monthlyPurchaseKey " + monthlyPurchaseKey + " not found. Creating...");						
 					custMonthlySummariesMap.put(monthlyPurchaseKey, monthlySummary);
 					
 				}
-				
-				
+	
 				// Determine points to add
-				System.out.println("Calculating points to add...");
-
 				int pointsToAdd=0;
 				if (customerpurchase.getPurchaseAmt()>100) {
 					pointsToAdd = (int) ((customerpurchase.getPurchaseAmt() - 100D) * 2D + 50);
@@ -142,15 +129,9 @@ public class CustomerReportService {
 				
 				monthlySummary.setPurchaseTotal(monthlySummary.getPurchaseTotal() + customerpurchase.getPurchaseAmt());
 
-//				System.out.println(customerpurchase.toString());
-//				System.out.println(monthlySummary.toString());
-
 				customerPurchaseSummary.setCustomerName(
 						customer.getFirstName() + " " + customer.getLastName() );
-			}
-
-//			customerPurchaseSummaries.add(customerPurchaseSummary).values().stream()
-//			.collect(Collectors.toList()));			
+			}	
 		}
 		return customerPurchaseSummaryMap;
 	}
